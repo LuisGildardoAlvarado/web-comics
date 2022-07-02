@@ -12,37 +12,73 @@ header{
   background-color: rgb(0, 0, 0);
   color: white;
   height: 10vh;
-  padding: 10px 20px 10px 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .header-nav{
+  width: 90%;
+  height: 90%;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  margin: 10px;
 }
 
-.container-menu a{
-  font-size: 2.5em;
-  color: white;
-  margin-left: 30px;
+.container-logo{
+  padding: 10px;
 }
 
 .container-logo a{
+  color: white;
   text-decoration: none;
+  font-size: 1em;
+}
+
+.container-search{
+  width: 50%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-input{
+  width: 80%;
+  padding: 15px;
+  height: 40px;
+  border-radius: 35px 0 0 35px ;
+  border-right:none ;
+  border: 0.5px solid white;
+}
+
+.search-button {
+  width: 50px;
+  height: 40px;
+  border: 1px solid #ffffff;
+  background: #000000;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.search-button a{
   color: white;
 }
 
+
 .container-icons{
-  margin-right: 30px;
-}
-.container-icons ul li{
-  display: inline-block;
-  padding: 20px;
+  padding: 10px;
 }
 
 .container-icons ul{
-  list-style: none;
+list-style: none;
+ text-decoration: none;
 }
 .container-icons a{
   color: white;
