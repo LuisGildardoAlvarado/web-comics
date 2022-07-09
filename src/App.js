@@ -1,30 +1,30 @@
 import './App.css';
-import { FiSearch, FiUser } from "react-icons/fi";
+import Header from './components/Header/Header';
+import { useEffect, useState } from 'react'
+import ComicsGrid from './components/ComicsGrid/ComicsGrid';
 
 function App() {
+
+  const[characters, setCharacters] = useState([]);
+
+  const initialUrl = "https://gateway.marvel.com/v1/public/characters?ts=1&apikey=4e549e334c3e5cb74f80641abf022896&hash=7e001fdd1ecb39e3ebf36a919eddf5dc"
+
+  const fetchCharacters = (url) => {
+    fetch(url)
+      .then(response => response.json())
+      .then(data => setCharacters(data.data.results, data.data.results.thumbnail ))
+      .catch(error => console.log(error))
+  };
+
+  useEffect(() => {
+    fetchCharacters(initialUrl);
+  }, [])
+  
+
   return (
     <div className="App">
-      <header>
-        <div className='header-nav'>
-          <div className='container-logo'>
-            <a href='null'> <h1>Web Comics</h1> </a>
-          </div>
-
-          <div className='container-search'>
-            <input type="text" className='search-input' placeholder='Search...' />
-            <button className='search-button'>
-              <a href='null'> <FiSearch/> </a>
-            </button>
-            
-          </div>
-
-          <div className='container-icons'>
-            <ul>
-              <li><a href='null'> <FiUser/> </a></li>
-            </ul>
-          </div>
-        </div>
-      </header>
+      <Header brand="Comic Web"/>
+      <ComicsGrid characters = {characters}/>
     </div>
   );
 }

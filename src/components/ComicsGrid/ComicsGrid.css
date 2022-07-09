@@ -1,0 +1,15 @@
+.grid{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    margin: 50px;
+    padding: 10px;
+    gap: 20px;
+}
+.row{
+    background-color: aqua;
+    display: flex;
+    border: 2px solid black;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
