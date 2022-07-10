@@ -13,14 +13,13 @@ import './ComicsGrid.css'
 export default function ComicsGrid( { characters }) {
   return (
 
-    <div className='grid'>
+    <div className='characters-container'>
       {characters.map((item, index) => (
-        <div key={index} className='row'>
-          <img src={`${item.thumbnail.path}.${item.thumbnail.extension}`} alt="" />
+        <div key={index} className='characters'>
+          <img src={`${item.thumbnail.path}.${item.thumbnail.extension}`} alt={item.name} />
           <h1> {item.name} </h1>
         </div>
       ))}
-
     </div>
   );
 }
