@@ -3,11 +3,12 @@ import Header from './components/Header/Header';
 import { useEffect, useState } from 'react'
 import ComicsGrid from './components/ComicsGrid/ComicsGrid';
 
+
 function App() {
 
   const[characters, setCharacters] = useState([]);
 
-  const initialUrl = "https://gateway.marvel.com/v1/public/characters?ts=1&apikey=4e549e334c3e5cb74f80641abf022896&hash=7e001fdd1ecb39e3ebf36a919eddf5dc"
+  const initialUrl = `https://gateway.marvel.com/v1/public/characters?ts=1&apikey=${process.env.REACT_APP_API_KEY}&hash=7e001fdd1ecb39e3ebf36a919eddf5dc`
 
   const fetchCharacters = (url) => {
     fetch(url)
@@ -18,14 +19,12 @@ function App() {
 
   useEffect(() => {
     fetchCharacters(initialUrl);
-  }, [])
+  })
   
 
   return (
     <div className="App">
       <Header brand="Comic Web"/>
-
-      hola a todos
       <ComicsGrid characters = {characters}/>
     </div>
   );
