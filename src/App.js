@@ -24,6 +24,8 @@ function App() {
   return (
     <div className="App">
       <Header brand="Comic Web"/>
+
+      hola a todos
       <ComicsGrid characters = {characters}/>
     </div>
   );
